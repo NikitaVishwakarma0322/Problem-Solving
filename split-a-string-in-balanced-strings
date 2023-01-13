@@ -1,0 +1,18 @@
+class Solution {
+    public int balancedStringSplit(String s) {
+        int count=0;
+        int total=0;
+        for(char y : s.toCharArray()){
+            if(y=='R'){
+                ++count;
+            }
+            if(y=='L'){
+                --count;
+            }
+            if(count==0){
+                total++;
+            }
+        }
+        return total;
+    }
+}
