@@ -1,0 +1,24 @@
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        
+       
+ HashMap<Integer ,Integer> map = new HashMap<>();
+        for(int key : nums){
+            if(!map.containsKey(key)){
+                map.put(key,1);
+            }
+            else{
+                map.put(key , map.get(key)+1);
+            }
+        }
+
+        int count=0;
+        for(int x : map.keySet()){
+            if(map.get(x)>=2){
+                count =  count + ((map.get(x) *( map.get(x) - 1))/2);
+            }
+        }
+
+    return count;
+    }
+}
