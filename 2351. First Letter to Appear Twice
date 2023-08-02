@@ -1,0 +1,16 @@
+class Solution {
+    public char repeatedCharacter(String s) {
+        HashMap<Character , Integer> map =  new HashMap<>();
+        char ans = ' ';
+        for(char ch : s.toCharArray()){
+            if(map.containsKey(ch)){
+                ans = ch;
+                break;
+            }
+            else{
+                map.put(ch,1);
+            }
+        }
+        return ans;
+    }
+}
